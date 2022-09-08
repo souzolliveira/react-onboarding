@@ -1,0 +1,116 @@
+.btn {
+  box-sizing: border-box;
+  border-radius: var(--subtle-radius);
+  box-shadow: var(--medium-drop-shadow);
+  text-align: center;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.btn-sm {
+  height: 24px;
+  padding: 2px var(--spacing-tiny);
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.5px;
+}
+
+.btn-md {
+  height: 36px;
+  padding: 6px var(--spacing-small);
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 1.25px;
+}
+
+.btn-lg {
+  height: 48px;
+  padding: 10px var(--spacing-base);
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.2px;
+}
+
+.primary {
+  background: var(--color-primary-light);
+  border: 2px solid var(--color-primary-light);
+  color: white;
+  &:hover {
+    background: var(--color-primary-lighter);
+    border: 2px solid var(--color-primary-lighter);
+    color: white;
+  }
+  &:active {
+    background: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    color: white;
+  }
+  &:focus {
+    background: var(--color-primary-light);
+    border: 2px solid var(--color-primary);
+    color: white;
+  }
+  &:disabled {
+    background: var(--gray-lighter);
+    border: 2px solid var(--gray-lighter);
+    color: var(--gray-light);
+    box-shadow: none;
+    cursor: no-drop;
+  }
+}
+
+.secondary {
+  background: var(--gray);
+  border: 2px solid var(--gray);
+  color: white;
+  &:hover {
+    background: var(--gray-light);
+    border: 2px solid var(--gray-light);
+    color: white;
+  }
+  &:active {
+    background: var(--gray);
+    border: 2px solid var(--gray);
+    color: white;
+  }
+  &:focus {
+    background: var(--gray);
+    border: 2px solid var(--gray-dark);
+    color: white;
+  }
+  &:disabled {
+    background: var(--gray-lighter);
+    border: 2px solid var(--gray-lighter);
+    color: var(--gray-light);
+    box-shadow: none;
+    cursor: no-drop;
+  }
+}
+
+.success {
+  background: var(--color-success-light);
+  border: 2px solid var(--color-success-light);
+  color: white;
+  &:hover {
+    background: var(--color-success-lighter);
+    border: 2px solid var(--color-success-lighter);
+    color: white;
+  }
+  &:active {
+    background: var(--color-success);
+    border: 2px solid var(--color-success);
+    color: white;
+  }
+  &:focus {
+    background: var(--color-success-light);
+    border: 2px solid var(--color-success-light);
+    color: white;
+  }
+  &:disabled {
+    background: var(--gray-lighter);
+    border: 2px solid var(--gray-lighter);
+    color: var(--gray-light);
+    box-shadow: none;
+    cursor: no-drop;
+  }
+}

@@ -5,8 +5,8 @@ const Button = ({
   name,
   children,
   className,
-  kind,
-  size,
+  kind = 'primary',
+  size = 'md',
   onClick,
   onFocus,
   onBlur,
@@ -38,4 +38,5 @@ const Button = ({
     </button>
   );
 };
+
 export default Button;

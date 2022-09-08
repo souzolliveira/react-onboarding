@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useRef } from 'react';
 
 import Button from '../Button';
@@ -82,3 +83,71 @@ const Onboarding = ({
 };
 
 export default Onboarding;
+
+Onboarding.propTypes = {
+  /**
+   * Must pass the highlighted element width
+   */
+  highlightedElementWidth: PropTypes.number.isRequired,
+  /**
+   * Must pass the highlighted element height
+   */
+  highlightedElementHeight: PropTypes.number.isRequired,
+  /**
+   * Must pass the highlighted element absolute top position
+   */
+  highlightedElementTop: PropTypes.number.isRequired,
+  /**
+   * Must pass the highlighted element absolute left position
+   */
+  highlightedElementLeft: PropTypes.number.isRequired,
+  /**
+   * Must pass a title to be shown on the popover
+   */
+  title: PropTypes.string.isRequired,
+  /**
+   * Must pass the component of description of actual step
+   */
+  description: PropTypes.func.isRequired,
+  /**
+   * Can pass the strings of footer buttons
+   */
+  texts: PropTypes.objectOf(PropTypes.string),
+  /**
+   * Must pass the function to go to next step
+   */
+  handleNext: PropTypes.func.isRequired,
+  /**
+   * Must pass the function to go to previous step
+   */
+  handlePrevious: PropTypes.func.isRequired,
+  /**
+   * Must pass the function to skip onboarding
+   */
+  handleSkip: PropTypes.func.isRequired,
+  /**
+   * Must pass the index of actual step
+   */
+  index: PropTypes.number.isRequired,
+  /**
+   * Must pass the total of steps
+   */
+  total: PropTypes.number.isRequired,
+  /**
+   * Must pass the relative position at screen
+   */
+  position: PropTypes.oneOf(['top', 'top-right', 'right', 'bottom-right', 'bottom', 'bottom-left', 'left', 'top-left']).isRequired,
+  /**
+   * Can pass the size
+   */
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+};
+
+Onboarding.defaultProps = {
+  size: 'md',
+  texts: {
+    next: 'Next',
+    previous: 'Previous',
+    finish: 'Finish',
+  },
+};

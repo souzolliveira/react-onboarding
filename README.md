@@ -98,11 +98,11 @@ const {
 | onboarding           | You must add this function inside the view that you want to render the onboarding                                                                                       |
 | steps                | You can see the set steps                                                                                                                                               |
 | setSteps             | You must setSteps using an useEffect hook before render the onboarding                                                                                                  |
-| setTexts             | You must set the button texts passing an object as `{ next: 'Next', previous: 'Previous', finish: 'Finish' }`                                                           |
+| setTexts             | You can set the button texts passing an object as `{ next: 'Next', previous: 'Previous', finish: 'Finish' }`                                                            |
 | setSize              | You can set the size of the popovers, the default value is `md`                                                                                                         |
 | setIsTutorialStarted | You set the value when you start the onboarding flow, for example, clicking on a `button`                                                                               |
 | handleSkip           | You can skip the onboarding using, for example, shortcuts                                                                                                               |
 | handleNext           | You can go to next step of the onboarding using, for example, shortcuts                                                                                                 |
 | handlePrevious       | You can go to previous step of the onboarding using, for example, shortcuts                                                                                             |
 | canBeStarted         | You can use this value inside a dependency array of an useEffect hook, for example, to deny the onboarding if you is rendering others components according to a promise |
-| setCanBeStarted      | You must set true using an useEffect hook, for example, in a finally of promise                                                                                         |
+| setCanBeStarted      | You must set true using an useEffect hook, for example, in a finally of promise, to able starting the onboarding                                                        |

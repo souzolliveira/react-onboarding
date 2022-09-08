@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useState, useEffect, useMemo, createContext, useContext } from 'react';
 
 import Onboarding from '../components/Onboarding/Onboarding';
@@ -168,3 +169,12 @@ const useOnboarding = () => {
 };
 
 export { OnboardingProvider, useOnboarding };
+
+useOnboarding.propTypes = {
+  /**
+   * Must pass the strings of footer buttons
+   */
+  texts: PropTypes.objectOf(PropTypes.string).isRequired,
+};
+
+useOnboarding.defaultProps = {};

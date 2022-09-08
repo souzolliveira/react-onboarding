@@ -1,0 +1,249 @@
+.overlay {
+  z-index: var(--zindex-overlay);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  mix-blend-mode: hard-light;
+  opacity: 0.8;
+
+  .highlight {
+    width: calc(var(--highlighted-element-width) + var(--spacing-small));
+    height: calc(var(--highlighted-element-height) + var(--spacing-small));
+    border-radius: var(--medium-radius);
+    position: absolute;
+    background-color: var(--gray);
+    top: calc(var(--highlighted-element-top) - var(--spacing-tiny));
+    left: calc(var(--highlighted-element-left) - var(--spacing-tiny));
+    transition: all 300ms ease-in-out;
+  }
+}
+
+.popoverContainer {
+  .optionsContainer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: var(--highlighted-element-top);
+    left: var(--highlighted-element-left);
+    z-index: var(--zindex-popover);
+    box-shadow: var(--long-drop-shadow);
+    transition: all 300ms ease-in-out;
+    border-radius: var(--medium-radius);
+    background-color: var(--popover-bg-description);
+    border: 1px solid var(--popover-border-color);
+
+    &.sm {
+      width: 150px;
+    }
+
+    &.md {
+      width: 300px;
+    }
+
+    &.lg {
+      width: 600px;
+    }
+
+    &.top {
+      top: calc(var(--highlighted-element-top) - var(--popover-height) - var(--spacing-small));
+      left: calc((var(--highlighted-element-left) + (var(--highlighted-element-width) - var(--popover-width)) / 2));
+
+      ::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin: 0 0 0 -2.5px;
+        border: 5px solid var(--popover-border-color);
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+      }
+    }
+
+    &.top-right {
+      top: calc(var(--highlighted-element-top) - var(--popover-height) - var(--spacing-small));
+      left: calc(var(--highlighted-element-left) + var(--highlighted-element-width) - var(--spacing-small));
+
+      ::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: var(--spacing-tiny);
+        margin: 0 0 0 -2.5px;
+        border: 5px solid var(--popover-border-color);
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+      }
+    }
+
+    &.right {
+      top: calc(var(--highlighted-element-top) - (var(--popover-height) - var(--highlighted-element-height)) / 2);
+      left: calc(var(--highlighted-element-left) + var(--highlighted-element-width) + var(--spacing-small));
+
+      ::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        margin: -2.5px 0 0 0;
+        border: 5px solid var(--popover-border-color);
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+      }
+    }
+
+    &.bottom-right {
+      top: calc(var(--highlighted-element-top) + var(--highlighted-element-height) + var(--spacing-small));
+      left: calc(var(--highlighted-element-left) + var(--highlighted-element-width) - var(--spacing-small));
+
+      ::after {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: var(--spacing-tiny);
+        margin: 0 0 0 -2.5px;
+        border: 5px solid var(--popover-border-color);
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+      }
+    }
+
+    &.bottom {
+      top: calc(var(--highlighted-element-top) + var(--highlighted-element-height) + var(--spacing-small));
+      left: calc((var(--highlighted-element-left) + (var(--highlighted-element-width) - var(--popover-width)) / 2));
+
+      ::after {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin: 0 0 0 -2.5px;
+        border: 5px solid var(--popover-border-color);
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+      }
+    }
+
+    &.bottom-left {
+      top: calc(var(--highlighted-element-top) + var(--highlighted-element-height) + var(--spacing-small));
+      left: calc(var(--highlighted-element-left) - var(--popover-width) + var(--spacing-small));
+
+      ::after {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        right: var(--spacing-tiny);
+        margin: 0 0 0 -2.5px;
+        border: 5px solid var(--popover-border-color);
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+      }
+    }
+
+    &.left {
+      top: calc(var(--highlighted-element-top) - (var(--popover-height) - var(--highlighted-element-height)) / 2);
+      left: calc(var(--highlighted-element-left) - var(--popover-width) - var(--spacing-small));
+
+      ::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin: -2.5px 0 0 0;
+        border: 5px solid var(--popover-border-color);
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+
+    &.top-left {
+      top: calc(var(--highlighted-element-top) - var(--popover-height) - var(--spacing-small));
+      left: calc((var(--highlighted-element-left)) - var(--popover-width) + var(--spacing-small));
+
+      ::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: calc(100% - var(--spacing-tiny) - 5px);
+        margin: 0 0 0 -2.5px;
+        border: 5px solid var(--popover-border-color);
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+      }
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      background-color: var(--popover-bg-title);
+      border-bottom: 1px solid var(--popover-border-color);
+      border-radius: var(--medium-radius) var(--medium-radius) 0 0;
+      padding: var(--spacing-tiny);
+
+      span {
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 500;
+        color: var(--primary-color);
+        margin-left: var(--spacing-tiny);
+      }
+
+      .fill {
+        flex: 1 0 0;
+      }
+
+      .skipButton {
+        cursor: pointer;
+        border: 0;
+        padding: 0;
+        background-color: transparent;
+      }
+    }
+
+    .body {
+      display: flex;
+      flex-direction: column;
+      padding: var(--spacing-small);
+    }
+
+    .footer {
+      display: flex;
+      margin-top: var(--spacing-small);
+
+      .step {
+        display: flex;
+        align-items: center;
+        width: calc(100% / 3);
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.5px;
+        color: var(--tertiary-color) !important;
+      }
+
+      .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: calc((100% / 3) * 2);
+
+        button {
+          &:last-of-type {
+            margin-left: var(--spacing-small);
+          }
+        }
+      }
+    }
+  }
+}

@@ -49,7 +49,7 @@ Button.propTypes = {
 Button.defaultProps = {
   name: '',
   kind: 'primary',
-  className: {},
+  className: '',
   size: 'md',
   onClick: () => {},
   disabled: false,

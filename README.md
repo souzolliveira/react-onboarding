@@ -18,10 +18,10 @@ yarn build
 yarn pack
 ```
 
-Moving `react-onboarding-v.x.x.x.tgz` to inside your project and add using
+Moving `react-onboarding-vx.x.x.tgz` to inside your project and add using
 
 ```bash
-yarn add ./react-onboarding-v.x.x.x.tgz
+yarn add ./react-onboarding-vx.x.x.tgz
 ```
 
 In the future, this lib will be published on `NPM`.

@@ -4,17 +4,27 @@ A beautiful way to you make an onboarding flow with your users.
 
 ## Setup
 
-#### NPM
+####
 
 ```bash
-npm i https://github.com/souzolliveira/react-onboarding
+git clone https://github.com/souzolliveira/react-onboarding.git
+
+cd react-onboarding
+
+yarn
+
+yarn build
+
+yarn pack
 ```
 
-#### yarn
+Moving `react-onboarding-v.x.x.x.tgz` to inside your project and add using
 
 ```bash
-yarn add souzolliveira/react-onboarding
+yarn add ./react-onboarding-v.x.x.x.tgz
 ```
+
+In the future, this lib will be published on `NPM`.
 
 ## Getting Started
 

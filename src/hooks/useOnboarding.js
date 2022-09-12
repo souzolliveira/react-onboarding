@@ -56,11 +56,21 @@ const OnboardingProvider = ({ children }) => {
       setPosition(positions.TOP_LEFT);
     else if (highlightedElementTop >= screenHeight - 300 && highlightedElementLeft + highlightedElementWidth < 300)
       setPosition(positions.TOP_RIGHT);
-    else if (highlightedElementTop < 300 && highlightedElementLeft + highlightedElementWidth < 300) setPosition(positions.BOTTOM_RIGHT);
-    else if (highlightedElementTop < 300 && highlightedElementLeft + highlightedElementWidth >= screenWidth - 300)
+    else if (
+      highlightedElementTop < 300 &&
+      screenHeight - (highlightedElementTop + highlightedElementHeight) > 300 &&
+      highlightedElementLeft + highlightedElementWidth < 300
+    )
+      setPosition(positions.BOTTOM_RIGHT);
+    else if (
+      highlightedElementTop < 300 &&
+      screenHeight - (highlightedElementTop + highlightedElementHeight) > 300 &&
+      highlightedElementLeft + highlightedElementWidth >= screenWidth - 300
+    )
       setPosition(positions.BOTTOM_LEFT);
     else if (highlightedElementTop >= screenHeight - 300) setPosition(positions.TOP);
-    else if (highlightedElementTop < 300) setPosition(positions.BOTTOM);
+    else if (highlightedElementTop < 300 && screenHeight - (highlightedElementTop + highlightedElementHeight) > 300)
+      setPosition(positions.BOTTOM);
     else if (highlightedElementLeft + highlightedElementWidth < screenWidth / 2) setPosition(positions.RIGHT);
     else if (highlightedElementLeft + highlightedElementWidth > screenWidth / 2) setPosition(positions.LEFT);
     else setPosition(positions.TOP);

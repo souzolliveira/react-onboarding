@@ -89,8 +89,8 @@ const OnboardingProvider = ({ children }) => {
   useEffect(() => {
     if (isTutorialStarted && steps.length > 0) {
       const element = document.querySelector(`[data-onboarding="${steps[index]?.dataOnboarding}"]`);
+      if (index === 0 && steps[index]?.executeBefore) steps[index].executeBefore();
       if (element) {
-        steps[index].executeBefore();
         element.scrollIntoView();
         setHighlightedElementWidth(element.offsetWidth);
         setHighlightedElementHeight(element.offsetHeight);
@@ -114,12 +114,19 @@ const OnboardingProvider = ({ children }) => {
   };
 
   const handleNext = async () => {
-    if (index < steps.length - 1) setIndex(state => state + 1);
-    else handleSkip();
+    if (index < steps.length - 1) {
+      steps[index + 1].executeBefore();
+      setIndex(state => state + 1);
+    } else {
+      handleSkip();
+    }
   };
 
   const handlePrevious = async () => {
-    if (index !== 0) setIndex(state => state - 1);
+    if (index !== 0) {
+      steps[index - 1].executeBefore();
+      setIndex(state => state - 1);
+    }
   };
 
   const onboarding = () => {

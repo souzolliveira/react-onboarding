@@ -26,7 +26,6 @@
     "eslint": "^7.32.0 || ^8.2.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "node-sass": "4.14.1",
     "prettier": "^2.7.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
@@ -54,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "dart-sass": "^1.25.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
@@ -61,6 +61,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "prop-types": "^15.8.1",
     "react": "16.14.0",
-    "react-dom": "16.14.0"
+    "react-dom": "16.14.0",
+    "sass": "^1.55.0"
   }
 }
